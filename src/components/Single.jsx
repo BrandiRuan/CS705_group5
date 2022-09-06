@@ -1,23 +1,23 @@
 import React from 'react';
 import { Card } from 'antd';
-import { CopyOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
 
-const Single = () => (
+const Single = (props) => (
     <Card
         hoverable
         style={{
-        width: 200
+        width: 200,
+        height: 200
         }}
         cover={
             <div>
             <br/>
-            <CopyOutlined style={{ fontSize: '50px', color:'#4D504E'}}/>
+            {props.icon}
             </div>
         }
     >
-        <Meta title="Ctrl + C" description="Copy the selected item."/>
+        <Meta title={props.title} description={props.desc} />
     </Card>
 );
 
