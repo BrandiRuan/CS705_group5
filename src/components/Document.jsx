@@ -30,12 +30,14 @@ import {
     CaretLeftOutlined
 } from '@ant-design/icons';
 import Single from './Single';
+import './Document.css';
 
 const { Title, Text, Link } = Typography;
 
 const Document = () => (
     <div>
         <Title>Keyboard Shortcuts in Windows</Title>
+        <div className='icon_main'>
         <Space align='center' size={30} wrap={true}>
             <Single title={"Ctrl + C"} desc={'Copy the selected item.'} icon={<CopyOutlined style={{ fontSize: '50px', color:'#4D504E'}}/>}/>
             <Single title={"Ctrl + V"} desc={'Paste the selected item.'} icon={ <SnippetsOutlined style={{ fontSize: '50px', color:'#4D504E'}}/>}/>
@@ -68,6 +70,7 @@ const Document = () => (
             <Single title={"Ctrl + Right arrow"} desc={'Move the cursor to the beginning of the next word.'} icon={<CaretRightOutlined style={{ fontSize: '50px', color:'#4D504E'}}/>}/>
             <Single title={"Ctrl + Left arrow"} desc={'Move the cursor to the beginning of the previous word.'} icon={<CaretLeftOutlined style={{ fontSize: '50px', color:'#4D504E'}}/>}/>
         </Space>
+        </div>
         <br/><br/><br/>
         <Space direction='vertical' size={30}>
             <Text type="secondary">*Shortcuts shown in this page is from Windows 10.</Text>
