@@ -8,7 +8,9 @@ const Single = (props) => (
         hoverable
         style={{
         width: 200,
-        height: 200
+        height: 200,
+        // minWidth:'30rem',
+        // minHeight:'30rem'
         }}
         cover={
             <div>
@@ -16,8 +18,14 @@ const Single = (props) => (
             {props.icon}
             </div>
         }
+        headStyle={{
+            textAlign:'center'
+        }}
+        bodyStyle={{
+            textAlign:'center'
+        }}
     >
-        <Meta title={props.title} description={props.desc} />
+        <Meta title={props.title} description={props.desc} style={{textAlign:'center', display:'block'}}/>
     </Card>
 );
 

@@ -1,0 +1,28 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#documentContainer{
+    text-align: center;
+    position: absolute;
+    top: 3rem;
+    left: 0%;
+    right: 0%;
+    z-index: 9999;
+}
+
+#documentTitle{
+    margin-top: 1vh;
+}
+
+.icon_main{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.shortcutintro{
+    display: flex;
+    justify-content: center;
+}

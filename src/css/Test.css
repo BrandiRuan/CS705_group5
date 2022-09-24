@@ -1,0 +1,104 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#testContainer{
+    position: absolute;
+    top: 3rem;
+    /* background-color: palevioletred; */
+    width: 90%;
+    left: 5%;
+    right: 5%;
+}
+
+#controllerContainer{
+    display: flex;
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    /* background-color: paleturquoise; */
+    margin-top: 100px;
+    /* margin-bottom: 30px; */
+}
+
+.sliderContainer{
+    float: left;
+    text-align: center;
+    /* background-color: gray; */
+}
+
+.sliderContainer>span{
+    font-size: 1.2em;
+    display: block;
+    /* background-color: palegoldenrod; */
+    width: 5vw;
+    min-width: 8rem;
+    float: left;
+    text-align: center;
+}
+
+.slider{
+    width: 10vw;
+    float: left;
+    display: block;
+}
+
+.checkButton{
+    display: block;
+    position: absolute;
+    right: 0%;
+    text-align: center;
+}
+
+#quizContainer{
+    clear: both;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* background-color: red; */
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#quizTitle{
+    /* margin-top: 50px;  */
+    background-color: goldenrod;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 999rem;
+}
+
+#optionContainer{
+    width: 80%;
+    margin: 100px auto;
+    /* background-color: palegreen; */
+    height: 10vh;
+}
+
+.optionItem{
+    width: 20%;
+    float: left;
+    margin: 0 10%;
+    /* background-color: orange; */
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.optionItem:nth-child(2), .optionItem:nth-child(4){
+    float: right;
+}
+
+.optionButton{
+    width: 9rem;
+    height: 3rem;
+    border-radius: 999em;
+    background-color: white;
+    border: 1px solid rgb(219, 219, 219);
+    cursor: pointer;
+}
+.optionButton:hover{
+    border: 1px solid rgb(24,144,255);
+    color:  rgb(24,144,255);
+}

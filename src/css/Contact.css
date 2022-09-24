@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#contactContainer{
+    position: absolute;
+    top: 3rem;
+    /* background-color: palevioletred; */
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+}
+
+.contactList{
+    position: relative;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

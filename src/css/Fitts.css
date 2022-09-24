@@ -1,0 +1,169 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#fittsContainer{
+    position: absolute;
+    top: 3rem;
+    /* background-color: palevioletred; */
+    width: 90%;
+    left: 5%;
+    right: 5%;
+}
+
+.FittsMain{
+    width: 70%;
+    min-width: 500px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e4ebe8;
+    padding: 40px 20px 20px 20px;
+}
+
+.FittsIntro{
+    width: 70%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.FittsIntro p{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: larger;
+}
+
+.Fittsimage1{
+    padding-bottom: 30px;
+}
+
+.FittsVideo{
+    display: flex; 
+    width: 100%; 
+    height: 100%; 
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.FittsToutube{
+    display: block;
+    background: #000;
+    border: none;
+    height: calc(60vh - 30px);
+    width: 100%;
+}
+
+.calculate{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.calculate p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.calculate li{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.Fittsimage2{
+    /* width: 50%; */
+}
+
+.UIFitts{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.textfitts{
+    text-align: justify;
+    text-justify: inter-word;
+
+}
+
+.UIFitts .imageFitts{
+    text-align: center;
+    width: 90%;
+}
+.imageFitts{
+    margin: auto;
+    display: block;
+}
+
+.Fittsimage4{
+    float: left;
+    width:  98%;
+    object-fit: cover;
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.subpic{
+    text-align: center;
+    text-justify: inter-word;
+    color: gray;
+}
+
+.lastSpace{
+    padding-bottom: 50px;
+}
+
+.risk{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.column2 {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+.row {
+    padding-top: 20px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.lastText{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+footer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    background-color: rgb(220, 220, 220);
+    color: rgb(144, 144, 144);
+    width: 70%;
+    min-width: 500px;
+}
+
+footer p{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: small;
+}
+
+.ref {
+    width: 95%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
