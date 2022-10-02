@@ -3,28 +3,21 @@
     padding: 0%;
 }
 
-#testContainer{
-    position: absolute;
-    top: 3rem;
-    /* background-color: palevioletred; */
-    width: 90%;
-    left: 5%;
-    right: 5%;
-}
+
 
 #controllerContainer{
     display: flex;
+    flex-wrap: wrap;
     position: relative;
-    width: 65%;
-    margin: 0 auto;
     /* background-color: paleturquoise; */
     margin-top: 100px;
-    /* margin-bottom: 30px; */
+     margin-bottom: 10px;
 }
 
 .sliderContainer{
-    float: left;
     text-align: center;
+    display: flex;
+    align-items: center;
     /* background-color: gray; */
 }
 
@@ -40,15 +33,13 @@
 
 .slider{
     width: 10vw;
-    float: left;
     display: block;
 }
 
 .checkButton{
     display: block;
-    position: absolute;
-    right: 0%;
     text-align: center;
+    margin-left: auto;
 }
 
 #quizContainer{
@@ -64,22 +55,21 @@
 
 #quizTitle{
     /* margin-top: 50px;  */
-    background-color: goldenrod;
+    background-color: #d8ceff;
     font-size: 2rem;
     padding: 1rem;
     border-radius: 999rem;
 }
 
 #optionContainer{
-    width: 80%;
-    margin: 100px auto;
-    /* background-color: palegreen; */
-    height: 10vh;
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .optionItem{
     width: 20%;
-    float: left;
     margin: 0 10%;
     /* background-color: orange; */
     text-align: center;
@@ -91,14 +81,141 @@
 }
 
 .optionButton{
-    width: 9rem;
-    height: 3rem;
+    transition: all 0.3s;
+    width: 20%;
+    height: 2rem;
     border-radius: 999em;
     background-color: white;
     border: 1px solid rgb(219, 219, 219);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .optionButton:hover{
     border: 1px solid rgb(24,144,255);
     color:  rgb(24,144,255);
+}
+.answerContainer{
+    padding: 20px;
+    border: 1px solid rgb(219, 219, 219);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.testMainDiv{
+    display: flex;
+    flex-direction: column;
+}
+#testContainer{
+    /* background-color: palevioletred; */
+    min-width: 600px;
+}
+.tabMainContainer{
+    display: flex;
+    position: absolute;
+    height: calc(100vh - 60px);
+    top: 60px;
+    width: 100%;
+}
+.rightDrawer{
+    width: 80%;
+    overflow-x: auto;
+    border: 2px dashed #2196f3;
+}
+.testLeftDiv{
+    top: 3rem;
+    padding: 0 2%;
+    overflow: auto;
+    width: 100%;
+}
+.rowChoose{
+    background: #d0d0d0;
+}
+.customRow:hover{
+}
+.whatsFittsLawImg{
+    width: 100%;
+}
+.fittsLawHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+.closeIcon{
+    cursor: pointer;
+    font-size: 2rem;
+    position: relative;
+    top: -0.7rem;
+}
+.nextBtn{
+    margin-left: auto;
+    border-radius: 2rem;
+}
+.nextBtn:hover{
+    border: 1px solid rgb(0,0,0);
+    color: #000
+}
+.againBtn{
+    border-radius: 2rem;
+}
+.againBtn:hover{
+    border: 1px solid rgb(0,0,0);
+    color: #000
+}
+.correctBase{
+}
+.correct{
+    width: 80%;
+    height: 7rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #47ffc1;
+    border-radius: 2rem;
+    font-size: 4rem;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.false{
+    width: 80%;
+    height: 7rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 2rem;
+    font-size: 4rem;
+    border: 1px solid;
+    color: #000;
+}
+
+.showAnswerDiv{
+    flex-direction: column;
+}
+.falseIcon{
+    position: absolute;
+    right: 12%;
+    top: -24%;
+    font-size: 10rem;
+    color: red;
+}
+.correctIcon{
+    position: absolute;
+    right: 12%;
+    top: -24%;
+    font-size: 10rem;
+    color: #85db85;
+}
+.scoreDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin-top: 20px;
+    font-family: fantasy;
 }

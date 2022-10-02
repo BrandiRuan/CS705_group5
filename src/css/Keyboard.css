@@ -30,6 +30,10 @@
     cursor: default;
 }
 
+.keyboardActiveItem {
+    background: red;
+}
+
 .rowItem{
     margin-bottom: 10px;
 }
