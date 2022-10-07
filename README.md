@@ -1,15 +1,15 @@
 
-**Alternatively, you can choose to run the application in your local machine:**
-**Before you run the application in the local environment:**
-**#Install environment**
-Make sure you have a recent Node.js version: https://nodejs.org/en/
-**#To run the application:**
--In terminal/powershell, enter the application's foler path.
-**#Initialize dependency and package:**
--npm install
--npm install antd
-**#Run the application:**
--npm run start
+**Alternatively, you can choose to run the application in your local machine:**<br>
+**Before you run the application in the local environment:**<br>
+**#Install environment**<br>
+Make sure you have a recent Node.js version: https://nodejs.org/en/<br>
+**#To run the application:**<br>
+-In terminal/powershell, enter the application's foler path.<br>
+**#Initialize dependency and package:**<br>
+-npm install<br>
+-npm install antd<br>
+**#Run the application:**<br>
+-npm run start<br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
