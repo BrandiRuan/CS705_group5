@@ -1,11 +1,11 @@
 
 **Alternatively, you can choose to run the application in your local machine:**<br>
 **Before you run the application in the local environment:**<br>
-**#Install environment**<br><br>
+**###Install environment**<br><br>
 Make sure you have a recent Node.js version: https://nodejs.org/en/<br><br>
-**#To run the application:**<br>
+**###To run the application:**<br>
 -In terminal/powershell, enter the application's folder path.<br><br>
-**#Initialize dependency and package:**<br>
+**###Initialize dependency and package:**<br>
 -npm install<br>
 -npm install antd<br>
 **#Run the application:**<br><br>
