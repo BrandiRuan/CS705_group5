@@ -1,18 +1,19 @@
-# Getting Started with Create React App
+
+**Alternatively, you can choose to run the application in your local machine:**
+**Before you run the application in the local environment:**
+**#Install environment**
+Make sure you have a recent Node.js version: https://nodejs.org/en/
+**#To run the application:**
+-In terminal/powershell, enter the application's foler path.
+**#Initialize dependency and package:**
+-npm install
+-npm install antd
+**#Run the application:**
+-npm run start
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Other Available Scripts
 
 ### `yarn test`
 
