@@ -4,7 +4,7 @@
 **#Install environment**<br><br>
 Make sure you have a recent Node.js version: https://nodejs.org/en/<br><br>
 **#To run the application:**<br>
--In terminal/powershell, enter the application's foler path.<br><br>
+-In terminal/powershell, enter the application's folder path.<br><br>
 **#Initialize dependency and package:**<br>
 -npm install<br>
 -npm install antd<br>
