@@ -3,7 +3,7 @@
 **Before you run the application in the local environment:**<br>
 **Install environment**<br><br>
 Make sure you have a recent Node.js version: https://nodejs.org/en/<br><br>
-##**To run the application:**<br>
+**To run the application:**<br>
 -In terminal/powershell, enter the application's folder path.<br><br>
 **Initialize dependency and package:**<br>
 -npm install<br>
