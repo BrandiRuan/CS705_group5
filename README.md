@@ -12,3 +12,4 @@ Make sure you have a recent Node.js version: https://nodejs.org/en/<br>
 -npm install antd<br>
 ### Run the application:<br>
 -npm run start<br>
+## Configured code is located at src\ folder
