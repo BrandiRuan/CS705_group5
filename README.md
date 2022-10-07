@@ -1,21 +1,21 @@
 
 **Alternatively, you can choose to run the application in your local machine:**<br>
 **Before you run the application in the local environment:**<br>
-**Install environment**<br><br>
+##**Intstall Enviroment**<br>
 Make sure you have a recent Node.js version: https://nodejs.org/en/<br><br>
-**To run the application:**<br>
+##**To run the application:**<br>
 -In terminal/powershell, enter the application's folder path.<br><br>
-**Initialize dependency and package:**<br>
+##**Initialize dependency and package:**<br>
 -npm install<br>
--npm install antd<br>
-**Run the application:**<br><br>
+-npm install antd<br><br>
+**Run the application:**<br>
 -npm run start<br><br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Other Available Scripts
 
-### `yarn test`
+**`yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
