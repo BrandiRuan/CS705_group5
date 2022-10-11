@@ -1,9 +1,9 @@
 import React from 'react';
 import { Typography, Space,Button,Tooltip } from 'antd';
-import { 
-    RightCircleOutlined, 
-    CopyOutlined, 
-    SnippetsOutlined, 
+import {
+    RightCircleOutlined,
+    CopyOutlined,
+    SnippetsOutlined,
     ScissorOutlined,
     UndoOutlined,
     SwapOutlined,
@@ -28,14 +28,16 @@ import {
     DeleteOutlined,
     CaretRightOutlined,
     CaretLeftOutlined,
-    RightOutlined
+    RightOutlined,
+    RollbackOutlined, AppstoreAddOutlined,
 } from '@ant-design/icons';
 import Header from './Header'
 import Single from './Single';
 import '../css/Document.css';
-
 const { Title, Text, Link } = Typography;
-
+const goToTutor = () => {
+    // navigate('/tutorial')
+}
 const Document = (props) => (
     <div>
         <Header history={props.history}></Header>
@@ -73,6 +75,8 @@ const Document = (props) => (
                 <Single title={"Ctrl + Y"} desc={'Redo an action.'} icon={<RedoOutlined style={{ fontSize: '3.5rem', color:'#4D504E'}}/>}/>
                 <Single title={"Ctrl + Right arrow"} desc={'Move the cursor to the beginning of the next word.'} icon={<CaretRightOutlined style={{ fontSize: '3.5rem', color:'#4D504E'}}/>}/>
                 <Single title={"Ctrl + Left arrow"} desc={'Move the cursor to the beginning of the previous word.'} icon={<CaretLeftOutlined style={{ fontSize: '3.5rem', color:'#4D504E'}}/>}/>
+                <Single title={"Shift + Tab"} desc={'Move back through options.'} icon={<RollbackOutlined style={{ fontSize: '3.5rem', color:'#4D504E'}}/>}/>
+                <Single title={"Wins + Tab"} desc={'Open Task view.'} icon={<AppstoreAddOutlined style={{ fontSize: '3.5rem', color:'#4D504E'}}/>}/>
             </Space>
             </div>
             <br/><br/><br/>
@@ -84,13 +88,16 @@ const Document = (props) => (
                     </Link>
                     .
                 </Title>
-                <Tooltip title="search">
-                    <Button shape="circle" icon={<RightOutlined />} size='large' />
+                <Tooltip title="Tutorial">
+                    <Link href={'/tutorial'}>
+                        <Button onClick={goToTutor} shape="circle" icon={<RightOutlined />} size='large' />
+                    </Link>
                 </Tooltip>
                 {/* <Button shape="circle" icon={<RightCircleOutlined />} size='large' /> */}
                 <br/>
             </Space>
         </div>
+
     </div>
 );
 

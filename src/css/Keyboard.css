@@ -29,13 +29,33 @@
     position: relative;
     cursor: default;
 }
+.keyboardSpecialItem{
+    background-color: rgb(129,144,165);
+    color: rgb(255,255,255);
+}
+
+.keyboardSpaceItem{
+    background: rgb(255,255,255);
+    padding: 1rem 0;
+    /* text-align: center; */
+    /* padding: 0%; */
+    width: 10.8vw;
+    height: 1.8vw;
+    min-width: 320px;
+    min-height: 50px;
+    text-align: center;
+    border-radius: 5%;
+    position: relative;
+}
 
 .keyboardActiveItem {
-    background: red;
+    background: #ffd500;
+    color: #000;
 }
 
 .rowItem{
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .doubleText1{
@@ -60,7 +80,6 @@
 }
 
 .keyboardDoubleItem{
-    background: rgb(255,255,255);
     padding: 1rem 0;
     /* text-align: center; */
     /* padding: 0%; */
@@ -75,7 +94,6 @@
 }
 
 .keyboardTripleItem{
-    background: rgb(255,255,255);
     padding: 1rem 0;
     /* text-align: center; */
     /* padding: 0%; */
@@ -103,22 +121,38 @@
     position: relative;
     cursor: default;
 }
-
-.keyboardSpaceItem{
-    background: rgb(255,255,255);
-    padding: 1rem 0;
-    /* text-align: center; */
-    /* padding: 0%; */
-    width: 10.8vw;
-    height: 1.8vw;
-    min-width: 300px;
-    min-height: 50px;
-    text-align: center;
-    border-radius: 5%;
-    position: relative;
+.shiftLeftSpecial{
+    min-width: 130px;
 }
-
-.keyboardSpecialItem{
-    background-color: rgb(129,144,165);
-    color: rgb(255,255,255);
+.resultDiv{
+    position: absolute;
+    font-size: 8rem;
+}
+.keyboardResultDiv{
+    position: absolute;
+    font-size: 20rem;
+    left: 50%;
+    top: 40%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 1;
+    overflow: hidden;
+    height: 100%;
+}
+.keyboardFalseIcon{
+    color: #ff0000b3;
+}
+.keyboardTrueIcon{
+    color: #00ff00b3;
+    font-weight: 700;
+}
+.keyboardCongrats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.customBtn{
+    margin-top: 20px;
 }

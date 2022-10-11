@@ -1,4 +1,4 @@
-import { Menu, Button } from 'antd';
+import { Menu, Button,Statistic } from 'antd';
 import { HomeOutlined, FolderOutlined, FormOutlined, HighlightOutlined,ContactsFilled} from '@ant-design/icons';
 import {useNavigate, useLocation } from 'react-router-dom';
 import {useState} from 'react';
@@ -14,7 +14,7 @@ const Header = (pros) => {
           onClick: () => {history('/homepage')}
         },
         {
-          label: 'Learning Fitts Law',
+          label: "Learning Fitts' Law",
           key: '/fitts',
           icon: <HighlightOutlined />,
           onClick: () => {history('/fitts')}
@@ -31,12 +31,12 @@ const Header = (pros) => {
           icon: <FormOutlined />,
           onClick: () => {history('/tutorial')}
         },
-        {
-          label: 'Test',
-          key: '/test',
-          icon: <HighlightOutlined />,
-          onClick: () => {history('/test')}
-        },
+        // {
+        //   label: 'New tutorial',
+        //   key: '/test',
+        //   icon: <HighlightOutlined />,
+        //   onClick: () => {history('/test')}
+        // },
       ];
     const history = useNavigate();
     const location = useLocation();
@@ -46,10 +46,10 @@ const Header = (pros) => {
         <div className='logoContainer' onClick={() =>{history('/homepage')}}>
           {/* <img src={logo} alt="Logo"/> */}
         </div>
-        <Menu selectedKeys={location.pathname} mode="horizontal" items={items} style={{backgroundColor:'transparent', width: '95%', float:'left', height:'3rem'}}/>
-        <div>
-          <Button shape="round" icon={<ContactsFilled />} size='large' id='contactButton' onClick={() =>{history('/contact')}}>Contact Us </Button>
+        <div className={'menuContainer'}>
+            <Menu selectedKeys={location.pathname} mode="horizontal" items={items} style={{backgroundColor:'transparent', height:'3rem'}}/>
         </div>
+          <Button shape="round" icon={<ContactsFilled />} size='large' id='contactButton' onClick={() =>{history('/contact')}}>Contact Us </Button>
       </div>
     )
 };

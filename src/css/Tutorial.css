@@ -6,28 +6,23 @@
 #tutorialContainer{
     position: absolute;
     top: 3rem;
-    left: 15%;
-    right: 15%;
     z-index: 9999;
-    /* width: 70%; */
-    /* background-color: palegoldenrod; */
     height: 350px;
-    width: 50vw;
     margin: 0 auto;
-    min-width: 920px;
-    max-width: 950px;
+    padding: 0 10%;
+
 }
 
 #tutorialTitle{
     margin: 30px 0 100px 0;
     text-align: center;
-    
+
 }
 
 .questionContainer{
     width: 90%;
     /* background-color: red; */
-    margin: 150px auto;
+    margin: 130px auto;
     text-align: center;
 }
 
@@ -46,5 +41,6 @@
 #tutorialKeyboard{
     position: relative;
     top: 35rem;
+    padding-bottom: 120px;
 }
 

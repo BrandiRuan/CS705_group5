@@ -15,7 +15,7 @@ const Homepage = (props) => {
     const location = useLocation();
 
     return (
-        <div>
+        <div className={'bottomMargin'}>
             <div>
                 <Header history={props.history}></Header>
             </div>
@@ -30,7 +30,7 @@ const Homepage = (props) => {
                     className="bg bg1"
                     />
                     <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-                        Welcome to the shortcut key learning platform!
+                        Welcome to the Fitts' Law learning platform!
                     </TweenOne>
                     <TweenOne className="banner-user-text"
                     animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
@@ -58,10 +58,11 @@ const Homepage = (props) => {
                 </BannerAnim>
             </div>
             <div id='buttonContainer'>
+                <Button shape="round" size='large' className='homepageButton'onClick={() =>{history('/fitts')}} >Learn Fitts' Law</Button>
                 <Button shape="round" size='large' className='homepageButton' onClick={() =>{history('/document')}} >Learn Document </Button>
                 <Button shape="round" size='large' className='homepageButton'onClick={() =>{history('/tutorial')}} >Learn Toturial </Button>
-                <Button shape="round" size='large' className='homepageButton'onClick={() =>{history('/test')}} >Do Test </Button>
-                <Button shape="round" size='large' className='homepageButton'onClick={() =>{history('/fitts')}} >Learning Fitts Law</Button>
+
+                
             </div>
         </div>
 )};

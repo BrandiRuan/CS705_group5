@@ -135,7 +135,7 @@ const Test = (props) => {
         {
             question: 'Switch between open apps.',
             answerList: ['Alt + SpaceBar', 'Wins + D', 'Alt + Tab', 'Alt + underlined'],
-            correctAnswerIndex: 1,
+            correctAnswerIndex: 2,
         },
         {
             question: 'Lock your computer/device.',
@@ -150,11 +150,11 @@ const Test = (props) => {
         {
             question: 'Redo an action.',
             answerList: ['Ctrl + Z', 'Ctrl + Y', 'Alt + Left arrow', 'Alt + Right arrow'],
-            correctAnswerIndex: 0,
+            correctAnswerIndex: 1,
         },
         {
             question: 'Move back through options.',
-            answerList: ['Alt + Tab', 'hift + Page Up', 'Ctrl + Page Up', 'Shift + Tab'],
+            answerList: ['Alt + Tab', 'shift + Page Up', 'Ctrl + Page Up', 'Shift + Tab'],
             correctAnswerIndex: 3,
         }
     ]
@@ -294,7 +294,7 @@ const Test = (props) => {
             // console.log(distance,MT)
 
             //根据btnReact的中心点和鼠标位置，计算出角度
-            const angle = Math.atan2(e.clientY - btnCenterY, e.clientX - btnCenterX) * 180 / Math.PI
+            const angle = -Math.atan2(e.clientY - btnCenterY, e.clientX - btnCenterX) * 180 / Math.PI
             return {
                 ...item, ...{
                     Button: item.Name,
@@ -386,27 +386,27 @@ const Test = (props) => {
             key: 'Type',
         },
         {
-            title: 'Movement Time(MT)',
+            title: 'Movement Time(MT/s)',
             dataIndex: 'MT',
             key: 'MT',
         },
         {
-            title: 'Mouse position(a)',
+            title: 'Mouse position(a/px)',
             dataIndex: 'MousePosition',
             key: 'MousePosition',
         },
         {
-            title: 'Angle(b)',
+            title: 'Angle(b°)',
             dataIndex: 'Angle',
             key: 'Angle',
         },
         {
-            title: 'Distance(D)',
+            title: 'Distance(D/px)',
             dataIndex: 'Distance',
             key: 'Distance',
         },
         {
-            title: 'Button Width(W)',
+            title: 'Button Width(W/px)',
             dataIndex: 'ButtonWidth',
             key: 'ButtonWidth',
         },
@@ -474,25 +474,29 @@ const Test = (props) => {
             const result = data.find(item => item.key === selectedRowKeys[0])
             return result&&result.MT
         }
-        return selectedRowKeys && selectedRowKeys.length && selectedRowKeys.reduce(
-            (total, item) => {
-                const result = data.find((item1) => item1.key === item);
-                if (!result.MT) {
-                    return total||0;
-                }
-                const value = parseFloat(result.MT) * 100;
-                const res = total * 100 + value
-                return res / 100
-            }
-        )
+
+
+       const res= selectedRowKeys.map((item, index) => {
+            const currentMTObj = data.find(_item => _item.key === item)
+           if (currentMTObj&&currentMTObj.MT){
+               return Number(currentMTObj.MT)
+           }else{
+               return 0
+           }
+        })
+
+         const res2 =   res.reduce((pre, cur) => {
+            return pre + cur
+        })
+        return res2.toFixed(2)
     };
     return (
-        <div className={'testMainDiv'}>
+        <div className={'testMainDiv bottomMargin'}>
             <Header></Header>
             <div className={'tabMainContainer'}>
                 <div className={'testLeftDiv'}>
                     <div id="testContainer">
-                        <Title id="tutorialTitle">For each question, please select the correct answer below.</Title>
+                        <Title id="tutorialTitle">For each question, please select the correct Windows shortcut answer.</Title>
                         <div id="controllerContainer">
                             <div className="sliderContainer">
                                 <span>Button Distence</span>
@@ -521,13 +525,13 @@ const Test = (props) => {
                                         _style = {..._style, boxShadow: 'grey 0px 0px 5px 8px inset'};
                                     }
                                     return (
-                                        <>
-                                            <div className={'optionButton'} key={item.key} id={'button' + item.key}
+
+                                            <div key={item.key} className={'optionButton'} id={'button' + item.key}
                                                  onClick={item.onClick}
                                                  style={_style}>
                                                 <span>{item.label}</span>
                                             </div>
-                                        </>
+
                                     )
                                 })}
                             </div>
@@ -542,13 +546,12 @@ const Test = (props) => {
                                         _style = {..._style, boxShadow: 'grey 0px 0px 5px 8px inset'};
                                     }
                                     return (
-                                        <>
+
                                             <div className={'optionButton'} key={item.key} id={'button' + item.key}
                                                  onClick={item.onClick}
                                                  style={_style}>
                                                 <span>{item.label}</span>
                                             </div>
-                                        </>
                                     )
                                 })}
                             </div>
@@ -572,9 +575,9 @@ const Test = (props) => {
                                 <Button id={'againBtn'} className={'againBtn'} onClick={again}>Play again?</Button>
                             </div>}
                         </div>
-                        {open && chooseButton && <>
+                        {open  && <>
                             <img src={require('../image/whatsFittsLaw2.png')} alt="" className={'whatsFittsLawImg'}/>
-                            <img src={require('../image/whatsFittsLaw.png')} alt="" className={'whatsFittsLawImg'}/></>}
+                            <img src={require('../image/whatsFittsLaw.png')} alt="" className={'whatsFittsLawImg lawSecondImg'}/></>}
                     </div>
                 </div>
                 {open && <div className={'rightDrawer'}>
@@ -613,7 +616,7 @@ const Test = (props) => {
                             <Descriptions.Item label="MT Sum Up">{
                                 selectedRowKeys.sort().map((item, index) => {
                                     const result = data.find((item1) => item1.key === item);
-                                    return <span>{result&&result.MT}{index !== selectedRowKeys.length - 1 ? ' + ' : ''}</span>
+                                    return <span>{result&&result.MT}{result&&result.MT&&index !== selectedRowKeys.length - 1 ? ' + ' : ''}</span>
                                 })
                             }</Descriptions.Item>
                             <Descriptions.Item label="MT Predicted Time(sec)">{calcMTPredicted()}</Descriptions.Item>

@@ -1,42 +1,25 @@
 import React, {useEffect} from "react";
-import {Typography, Space, Button, Tooltip, Drawer, Table, Badge, Descriptions, message,Col, Row, Statistic } from 'antd';
+import {Typography, Space, Button, Tooltip, Drawer, Table, Badge, Descriptions, message,Col, Row, Statistic,Radio  } from 'antd';
 import {CopyOutlined} from '@ant-design/icons';
-import {useNavigate, useLocation } from 'react-router-dom';
 import Header from "./Header";
 import '../css/new Tutorial.css';
 import {Slider, Switch} from 'antd';
 import {useState, useRef} from 'react';
 import userEvent from "@testing-library/user-event";
 
-// import Countdown from "react-countdown";
 message.config({
     // top: 500,
     duration: 2,
     maxCount: 1,
 
 });
+// countdown部分
+const { Countdown } = Statistic;
+const deadline = Date.now() + 1000 * 5 * 1; // Momen
 
 
 
-// const cb = () =>{
-//     console.log(1)
-// }
-
-// const OPTIONS = {
-//     prefix: "Please enjoy your time",
-//     cb
-// }
-
-// const CountdownWrapper = () => {
-//   return <Countdown date={Date.now() + 1000} options={OPTIONS}/>;
-// };
-
-// const MemoCountdown = React.memo(CountdownWrapper);
-
-
-
-const Tutorial = (props) => {
-    const test = Date.now()
+const Group1 = (props) => {
     const originData = [
         {
             key: '1',
@@ -105,7 +88,7 @@ const Tutorial = (props) => {
             selected: false,
         },
     ]
-    const [time,setTime] = useState(test)
+
     const [disabled, setDisabled] = useState(false);
     // 创建选中项list
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -114,10 +97,12 @@ const Tutorial = (props) => {
     const [chooseButton, setChooseButton] = useState(null);
     const openRef = useRef(false)
     const chooseBtnRef = useRef(null)
-    const [distance, setDistance] = useState(15);
-    const [size, setSize] = useState(Number((15 / 100 * 25).toFixed(1)));
-    const [currentData, setCurrentData] = useState([]);
 
+    const [distance, setDistance] = useState(0);
+    const [size, setSize] = useState(Number((100 / 100 * 25).toFixed(1)));
+    const [visualSize, setVisualSize] = useState(100)
+
+    const [currentData, setCurrentData] = useState([]);
     const [selectedResult, setSelectedResult] = useState(false);
     const selectedResultRef = useRef(false);
     const [selectedResultBoolean, setSelectedResultBoolean] = useState(false);
@@ -128,30 +113,53 @@ const Tutorial = (props) => {
     const {Title, Text, Link} = Typography;
     const [display, setDisplay] = useState('none');
     const [sliderStatus, setSliderStatus] = useState(false)
-    const history = useNavigate();
-    const location = useLocation();
-    // countdown部分
+    const [radiosize, setRadioSize] = useState('large');
+    const [thankTitle, setThankTitle] = useState(false)
+    
 
-    const { Countdown } = Statistic;
-    const deadline = time + 1000 * 60 * 3 + 1000 ; // Momen
-    // const deadline = time + 1000 * 1
-    // const CountdownWrapper = () => {return <Countdown title="Please enjoy your time" value={deadline} onFinish={countdownEnd} id='countdown' style={{display:sliderStatus?'none':'block'}}/>};
-    // const MemoCountdown = React.memo(CountdownWrapper);
+    const info = () => {
+        message.success('Thanks for your participate in our 705 Group5 user study! You still can review different configuration. Good luck for your final exams!');
+      };
 
     const countdownEnd = () => {
         console.log('finished!');
         setDisplay('inline-block')
         setSliderStatus(true)
         setOpen(false);
+        
       };
-    
 
-    const clickGroup1 = () =>{
-        history('/group1')
+    const config1 = () =>{
+
+
+        marginChange(0)
+        sizeChange(100)
+        setVisualSize(100)
+        setThankTitle(false)
+
     }
-    const clickGroup2 = () =>{
-        history('/group2')
+    const config2 = () =>{
+
+
+        marginChange(100)
+        sizeChange(0)
+        setVisualSize(0)
+        setThankTitle(false)
+
     }
+    const config3 = () =>{
+
+
+        marginChange(50)
+        sizeChange(50)
+        setVisualSize(50)
+        setThankTitle(false)
+
+    }
+    const clickFinish = () =>{
+        setThankTitle(true)
+    }
+
     const questionList = [
         {
             question: 'Copy text, picture or file',
@@ -167,41 +175,6 @@ const Tutorial = (props) => {
             question: 'Undo/back to an action',
             answerList: ['Ctrl + A', 'Ctrl + Z', 'Ctrl + C', 'Alt + SpaceBar'],
             correctAnswerIndex: 1,
-        },
-        {
-            question: 'Close the active document.',
-            answerList: ['Ctrl + F4', 'Alt + Enter', 'Ctrl + Y', 'Alt + Esc'],
-            correctAnswerIndex: 0,
-        },
-        {
-            question: 'Rename the selected item.',
-            answerList: ['F2', 'Wins + L', 'Ctrl + D', 'F10'],
-            correctAnswerIndex: 0,
-        },
-        {
-            question: 'Switch between open apps.',
-            answerList: ['Alt + SpaceBar', 'Wins + D', 'Alt + Tab', 'Alt + underlined'],
-            correctAnswerIndex: 2,
-        },
-        {
-            question: 'Lock your computer/device.',
-            answerList: ['Ctrl + F4', 'Ctrl + A', 'Wins + L', 'Alt + PageUp'],
-            correctAnswerIndex: 2,
-        },
-        {
-            question: 'Search for a file or folder in File Explorer.',
-            answerList: ['Ctrl + F3', 'F3', 'Alt + F8', 'Ctrl + D'],
-            correctAnswerIndex: 1,
-        },
-        {
-            question: 'Redo an action.',
-            answerList: ['Ctrl + Z', 'Ctrl + Y', 'Alt + Left arrow', 'Alt + Right arrow'],
-            correctAnswerIndex: 1,
-        },
-        {
-            question: 'Move back through options.',
-            answerList: ['Alt + Tab', 'shift + Page Up', 'Ctrl + Page Up', 'Shift + Tab'],
-            correctAnswerIndex: 3,
         }
     ]
     const answer1Config = [
@@ -272,6 +245,7 @@ const Tutorial = (props) => {
     ]
 
     const marginChange = (newValue) => {
+        console.log(newValue)
         setDistance(newValue);
     }
     useEffect(() => {
@@ -392,12 +366,24 @@ const Tutorial = (props) => {
     }
 
     function clickNext() {
+        setThankTitle(false)
         setSelectedResult(false)
         const correctBtn = document.querySelector('#correctAnswerDiv')
         correctBtn.classList.remove('correct')
         correctBtn.classList.remove('false')
         if (questionNum+1<questionList.length){ //length=10  questionNum=9其实是10
             setQuestionNum(questionNum+1)
+        }
+    }
+
+    function clickPrev(){
+        setThankTitle(false)
+        setSelectedResult(false)
+        const correctBtn = document.querySelector('#correctAnswerDiv')
+        correctBtn.classList.remove('correct')
+        correctBtn.classList.remove('false')
+        if (questionNum-1>-1){ //length=10  questionNum=9其实是10
+            setQuestionNum(questionNum-1)
         }
     }
 
@@ -552,23 +538,34 @@ const Tutorial = (props) => {
         })
         return res2.toFixed(2)
     };
+
     return (
         <div className={'testMainDiv bottomMargin'}>
             <Header></Header>
             <div className={'tabMainContainer'}>
                 <div className={'testLeftDiv'}>
                     <div id="testContainer">
-                        <Title id="tutorialTitle">Please use slider to change button distances and sizes to see the different visualization.</Title>
-                        <Title level={4} id="tutorialTitle" style={{marginBottom:40}}>Please don't worry about the correct answer. Just focus on the experience on visulization</Title>
-                        <div id="controllerContainer">
+                        <Title  id="tutorialTitle" style={{marginBottom:40}}>Please use each configuration to encounter Fitts' Law.</Title>
+                        <Title level={4} id="tutorialTitle" style={{marginBottom:40}}>You don't have to answer the question but to encounter different configurations between button sizes and button distances.</Title>
+                        <div className="configButtonContainer">
+                            {/* <Button  shape="round" className="configButton" onClick={config1} style={{}}>Configuration1</Button>
+                            <Button  shape="round" className="configButton" onClick={config2}>Configuration2</Button>
+                            <Button  shape="round" className="configButton" onClick={config3}>Configuration3</Button> */}
+                            <Radio.Group value={radiosize} onChange={(e) => setRadioSize(e.target.value)}>
+                                <Radio.Button value="large" shape="round" onClick={config1}>Configuration1</Radio.Button>
+                                <Radio.Button value="default" shape="round" onClick={config2}>Configuration2</Radio.Button>
+                                <Radio.Button value="small" shape="round" onClick={config3}>Configuration3</Radio.Button>
+                            </Radio.Group>
+                        </div>
+                        <div id="controllerContainer" style={{marginTop:40}}>
                             <div className="sliderContainer">
                                 <span>Button Distance</span>
-                                <Slider defaultValue={15} disabled={sliderStatus} className="slider"
-                                        onChange={marginChange}/>
+                                <Slider value={distance} disabled={true} className="slider"
+                                        />
                             </div>
                             <div className="sliderContainer">
                                 <span>Button Size</span>
-                                <Slider defaultValue={15} disabled={sliderStatus} className="slider" onChange={sizeChange}/>
+                                <Slider value={visualSize} disabled={true} className="slider" />
                             </div>
                             <Button type={"primary"} shape="round" size='middle' className='checkButton'
                                     onClick={showDrawer}>Fitts' Law Visulization</Button>
@@ -590,7 +587,7 @@ const Tutorial = (props) => {
                                     return (
 
                                             <div key={item.key} className={'optionButton'} id={'button' + item.key}
-                                                 onClick={item.onClick}
+                                                //  onClick={item.onClick}
                                                  style={_style}>
                                                 <span>{item.label}</span>
                                             </div>
@@ -611,7 +608,7 @@ const Tutorial = (props) => {
                                     return (
 
                                             <div className={'optionButton'} key={item.key} id={'button' + item.key}
-                                                 onClick={item.onClick}
+                                                //  onClick={item.onClick}
                                                  style={_style}>
                                                 <span>{item.label}</span>
                                             </div>
@@ -630,9 +627,11 @@ const Tutorial = (props) => {
                             { selectedResult &&<div className={selectedResultBoolean?'correctIcon':'falseIcon'}>
                                 {selectedResultBoolean?'✓':'✘'}
                             </div>}
-                            {selectedResult && questionNum+1!==questionList.length&& <Button id={'nextBtn'} onClick={clickNext} className={'nextBtn'}>
-                                Next
-                            </Button>}
+                            <div className="changePageContainer">
+                                <Button onClick={clickPrev} className={'nextBtn'}>Previous</Button>
+                                <Button onClick={clickNext} className={'nextBtn'}>Next</Button>
+                                <Button onClick={info} className={'nextBtn'}>Finish try</Button>
+                            </div>
                             {selectedResult&&questionNum+1===questionList.length&&<div className={'scoreDiv'}>
                                 Your Score Is: {score.current*10}/100
                                 <Button id={'againBtn'} className={'againBtn'} onClick={again}>Play again?</Button>
@@ -641,20 +640,22 @@ const Tutorial = (props) => {
                         {open  && <>
                             <img src={require('../image/whatsFittsLaw2.png')} alt="" className={'whatsFittsLawImg'}/>
                             <img src={require('../image/whatsFittsLaw.png')} alt="" className={'whatsFittsLawImg lawSecondImg'}/></>}
-                        <div className="countdownContainer">
+                        {/* <div className="countdownContainer">
                             <Row>
                                 <Col span={12} offset={6}>
-                                    <Countdown title="Please enjoy your time" value={deadline} onFinish={countdownEnd} id='countdown' style={{display:sliderStatus?'none':'block'}}/>
+                                    <Countdown title="Please enjoy your time" value={deadline} onFinish={countdownEnd} id='countdown'/>
                                 </Col>
                             </Row>
                             
                             <div className="buttonGroup">
                                 <Title level={5} style={{display:`${display}`}} className="groupTitle">Please choose your group. If you are not sure please ask for help from any team member of us.</Title>
-                                <Button className="groupButtonItem" style={{display:`${display}`}} shape="round" size="large" onClick={clickGroup1}>Observe</Button>
-                                <Button className="groupButtonItem" style={{display:`${display}`}} shape="round" size="large" onClick={clickGroup2}>Observe & Click</Button>
-                                
+                                <Button className="groupButtonItem" style={{display:`${display}`}} shape="round" size="large">Group1</Button>
+                                <Button className="groupButtonItem" style={{display:`${display}`}} shape="round" size="large">Group2</Button>
                             </div>
-                        </div>
+                        </div> */}
+                        {/* <div className="thankContainer" style={{display:thankTitle?'block':'none'}}>
+                            <Title level={2}  id="tutorialTitle">Thanks for your participate in our 705 Group5 User study! You can still review different configuration. Good luck for your final exams!</Title>
+                        </div> */}
                     </div>
                 </div>
                 {open && <div className={'rightDrawer'}>
@@ -662,7 +663,7 @@ const Tutorial = (props) => {
                     <div className="flResultContainer">
 
                         <div className={'fittsLawHeader'}>
-                            <Title level={3}>Fitt's Law Calculation</Title>
+                            <Title level={3}>Fitts' Law Calculation</Title>
                             <div className={'closeIcon'} onClick={onClose}>×</div>
                         </div>
                         <Table columns={columns} dataSource={data} pagination={false} rowSelection={rowSelection}
@@ -684,7 +685,7 @@ const Tutorial = (props) => {
                     {/* 右侧抽屉打开后的第二个 */}
                     <div className="flCalContainer">
                         <div className={'fittsLawHeader'}>
-                            <Title level={3}>Fitt's Law Result</Title>
+                            <Title level={3}>Fitts' Law Result</Title>
 
                         </div>
                         <Descriptions bordered column={1}>
@@ -707,4 +708,4 @@ const Tutorial = (props) => {
     )
 };
 
-export default Tutorial;
+export default Group1;
