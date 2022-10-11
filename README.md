@@ -13,7 +13,7 @@ We have 5 pages in our project website. The realistic task of this website is to
 3. Document: This page contains some common-used windows shortcuts. We will tell users focus on experiencing of Fitts' Law rather than answering shortcut questions. They can find the correct answers directly from this page. 
 4. Tutorial: This is the main page of our website. 
   - Users have 3 minutes to try themselves. Each question has 4 choice. Users can modify the button sizes and the distances between buttons to see what kinds of configuration are easy and helpful to choose answer. There is a blue button called `Fitts' Law visualization`. Users can click on this button to see the calculation of Fitts' Law. The parameters used in the calculation are dynamic and real-time, which depends on the current location of cursor and current size & distance of buttons. 
-  - After 3 minutes, users will be randomly splited into two groups: `observing` and `observing & clicking`. Before experiencing the website, We will tell them which group are they in (They can not choose group by themselves). We determine three configurations for both groups, and they can only change between these three configurations. Each group has three questions. Users in the first group can only view the questions. They cannot actually answer questions and interact with buttons. Users in the second group can both view the questions and click on buttons. They will get real feedback when they answer questions. Both groups are allowed to jump between different questions and different configurations. They are always allowed to visualise the calculation of Fitts' Law by clicking on the "visualization button" as well. <br>
+  - After 3 minutes, users will be randomly splited into two groups: `observe` and `observe & click`. Before experiencing the website, We will tell them which group are they in (They can not choose group by themselves). We determine three configurations for both groups, and they can only change between these three configurations. Each group has three questions. Users in the first group can only view the questions. They cannot actually answer questions and interact with buttons. Users in the second group can both view the questions and click on buttons. They will get real feedback when they answer questions. Both groups are allowed to jump between different questions and different configurations. They are always allowed to visualise the calculation of Fitts' Law by clicking on the "visualization button" as well. <br>
   
 <div align="center">
 
@@ -35,21 +35,20 @@ We have 5 pages in our project website. The realistic task of this website is to
 - Number of participants: at least 10 university students. A minimum of 10 university students will be recruited to participate in this experiment.<br>
 - Duration: approximately 25 minutes (including learning test and questionnaire)<br>
 - Before the experiment begins, participants will fill out a knowledge test, which may take about 5 minutes. The website content study and learning test will take about 15 min and at the end of the experiment participants will be asked to fill in questions, which may take about 10 minutes. The total time cost is approximately 25 min.<br>
+
 ## Procedures
-1.	Learning and testing rules are explained to participants.<br>
+1.	Introduce the purposes of our research and introduce how to use our website to participants. <br>
 2.	Participants read the participant information sheet and sign the Consent Form.<br>
-3.	Participants are randomly and equally divided into two groups (Group A, Group B).<br>
-4.	Visit http://3.87.225.135/ in a laptop or Android device using a browser.<br>
-5.	Participants will first complete a pretest questionnaire on google form.<br>
-https://docs.google.com/forms/d/1vzipcfv14bQt1iG8JY7MqYZ-wXJbVwcTNRP2IhkZl1w/edit
+3.	Participants are randomly and equally divided into two groups (Group A: observe, Group B: observe & click).<br>
+4.	Participants will first complete a pretest questionnaire on google form.<br>
+https://forms.gle/JP1UPho2d9snDgpz9
+5.	Visit http://3.87.225.135/ in a laptop or Android device using a browser.<br>
 6.	Participants will then read materials about Fitts’ Law on the website and be asked to adjust the distance and size of the buttons in the tutorial page.<br>
-7.	At the end of the countdown, group A will perform Test 1 (observation only) and group B will perform Test 2.<br>
-8.	Participants in group B are asked to continue completing the test as quickly and accurately as possible and to check their results.<br>
-9.	Participants start Test 1 or 2.<br>
-10.	Participants will be asked to complete a post-test questionnaire after the experiment.<br>
-11.	Participants will complete the posttest questionnaire on google form.<br>
-https://docs.google.com/forms/u/1/d/1QEfgKjGSe4a93AuGq0TZxJSiAxHeG7nQ4VtML_M-VDY/edit?usp=drive_web
-12.	Complete the study.<br>
+7.	At the end of the countdown, group A will perform Test 1 (observation only) and group B will perform Test 2 (both observation and click).<br>
+8.	Participants start Test 1 or 2. They can experience as much time as they want until they feel that they understand Fitts' Law. <br>
+9.	Participants will be asked to complete a post-test questionnaire after the experiment.<br>
+https://forms.gle/2WH2uHraH5AD9mik8
+10.	Complete the user study.<br>
 
 # How to view/run our website
 ## You can access the application from a web browser:
